@@ -1,0 +1,20 @@
+public class FileDownload {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(() -> {
+            System.out.println("Part 1 downloading...");
+            try { Thread.sleep(1000); } catch (InterruptedException e) {}
+            System.out.println("Part 1 completed.");
+        });
+
+        Thread t2 = new Thread(() -> {
+            System.out.println("Part 2 downloading...");
+            try { Thread.sleep(1000); } catch (InterruptedException e) {}
+            System.out.println("Part 2 completed.");
+            System.out.println("File download completed.");
+        });
+
+        t1.start();
+        try { t1.join(); } catch (InterruptedException e) {}
+        t2.start();
+    }
+}
