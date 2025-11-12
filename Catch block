@@ -1,0 +1,2 @@
+Array index out of range!
+Reason: The statement arr[3] causes ArrayIndexOutOfBoundsException before division by zero occurs.
